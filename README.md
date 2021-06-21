@@ -4,8 +4,11 @@
 ### RNFaceDemo
 文章： [react native的js与ios的值传递](https://lianglei777.github.io/post/202106131117/)
 ```
+$ git clone https://github.com/lianglei777/demos.git
+$ cd demos
+$ git checkout RNFaceDemo
 $ cd RNFaceDemo
-$ npm install
-$ cd ios
+$ npm install 
+$ cd ios 
 $ pod install
 ```
