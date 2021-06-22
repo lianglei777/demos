@@ -17,6 +17,7 @@ export default class WebviewDemo extends PureComponent {
   onLoadEnd() {}
 
   render() {
+    
     const injectJSStr = `
   window.injectStr='我是注入的字段';
   var div = document.getElementById('testID');
@@ -42,7 +43,6 @@ export default class WebviewDemo extends PureComponent {
       // <View style={styles.container}>
       //   <WebView
       //     ref={ref => (this.webview = ref)}
-      //     useWebKit={true}
       //     source={{ uri: 'https://www.baidu.com/' }}
       //     style={{ flex: 1 }}
       //     onNavigationStateChange={navState => this.onNavigationStateChange(navState)}
