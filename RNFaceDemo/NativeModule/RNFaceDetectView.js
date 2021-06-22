@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 import {requireNativeComponent} from 'react-native';
 
 const RCTFaceDetectView = requireNativeComponent(
-  'RCTFaceDetectView',
+  'RCTFaceDetectView', // 此名称必须和原生封装的 RCTFaceDetectView.h 名称一致
   RNFaceDetectView,
 );
 

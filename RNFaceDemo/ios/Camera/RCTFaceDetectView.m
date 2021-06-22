@@ -69,7 +69,7 @@
   self.isFront = true; // 默认前置
   self.isBeautify = true; // 默认美颜开
   
-  self.captureQueue = dispatch_queue_create("com.gaiaworks.mosaiccamera.videoqueue", NULL);
+  self.captureQueue = dispatch_queue_create("com.facedetect.mosaiccamera.videoqueue", NULL);
   
   [self setupUI]; // 设置UI
   
@@ -362,7 +362,7 @@
 }
 
 // 添加人脸框
-- (void)makeFaceWithCIImage:(CIImage *)inputImage{
+- (void)makeFace{
   NSArray *transformedFaces = [self transformedFaces:self.faceObjects]; // 坐标转换
   for (AVMetadataFaceObject *faceObject in transformedFaces) { // 遍历人脸信息
     CGRect faceBounds = faceObject.bounds;
@@ -393,13 +393,13 @@
 #pragma mark - GPUImageVideoCameraDelegate
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
   
-  CIImage *sourceImage;
-  CVPixelBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-  sourceImage = [CIImage imageWithCVPixelBuffer:imageBuffer options:nil];
+//  CIImage *sourceImage;
+//  CVPixelBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+//  sourceImage = [CIImage imageWithCVPixelBuffer:imageBuffer options:nil];
   
   if (self.faceObjects && self.faceObjects.count > 0) {
   
-    [self makeFaceWithCIImage:sourceImage]; // 添加人脸框
+    [self makeFace]; // 添加人脸框
     
   } else {
     

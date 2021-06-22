@@ -20,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RCTFaceDetectView : UIView
 
+// 组件回调方法
 @property(nonatomic,copy)RCTBubblingEventBlock onFaceCallback;
+//传入的美颜参数
 @property(nonatomic,copy)NSString *beautyLevel;
 
 + (instancetype)sharedInstance; // 单例
